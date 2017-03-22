@@ -4,6 +4,8 @@ using Abp.Application.Services;
 using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.WebApi;
+using FirstABP.Persons;
+using Abp.WebApi.Controllers.Dynamic.Builders;
 
 namespace FirstABP.Api
 {
@@ -19,6 +21,9 @@ namespace FirstABP.Api
                 .Build();
 
             Configuration.Modules.AbpWebApi().HttpConfiguration.Filters.Add(new HostAuthenticationFilter("Bearer"));
+
+            Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder.For<IPersonAppService>("tasksystem/task").Build();
+            //DynamicApiControllerBuilder.For<IPersonAppService>("ChargeStationAPI/City").Build();
         }
     }
 }
