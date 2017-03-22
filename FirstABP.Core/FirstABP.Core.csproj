@@ -94,6 +94,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\Province.cs" />
     <Compile Include="FirstABPConsts.cs" />
     <Compile Include="FirstABPCoreModule.cs" />
     <Compile Include="Authorization\FirstABPAuthorizationProvider.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="Authorization\Roles\StaticRoleNames.cs" />
     <Compile Include="Editions\EditionManager.cs" />
     <Compile Include="Features\FeatureValueStore.cs" />
+    <Compile Include="IRepositories\IPersonRepository.cs" />
     <Compile Include="MultiTenancy\Tenant.cs" />
     <Compile Include="MultiTenancy\TenantManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,6 +147,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\Source\FirstABP-nl-NL.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

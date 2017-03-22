@@ -120,9 +120,23 @@
   <ItemGroup>
     <Compile Include="EntityFramework\FirstABPDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\FirstABPRepositoryBase.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonRepository.cs" />
+    <Compile Include="EntityFramework\TableMap\PersonMap.cs" />
     <Compile Include="Migrations\201701271145151_AbpZero_Initial.cs" />
     <Compile Include="Migrations\201701271145151_AbpZero_Initial.Designer.cs">
       <DependentUpon>201701271145151_AbpZero_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703220843328_InitiaData.cs" />
+    <Compile Include="Migrations\201703220843328_InitiaData.Designer.cs">
+      <DependentUpon>201703220843328_InitiaData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703220848233_ModifyPerson.cs" />
+    <Compile Include="Migrations\201703220848233_ModifyPerson.Designer.cs">
+      <DependentUpon>201703220848233_ModifyPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703220907256_ModifyTableName.cs" />
+    <Compile Include="Migrations\201703220907256_ModifyTableName.Designer.cs">
+      <DependentUpon>201703220907256_ModifyTableName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -150,7 +164,17 @@
     <EmbeddedResource Include="Migrations\201701271145151_AbpZero_Initial.resx">
       <DependentUpon>201701271145151_AbpZero_Initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703220843328_InitiaData.resx">
+      <DependentUpon>201703220843328_InitiaData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703220848233_ModifyPerson.resx">
+      <DependentUpon>201703220848233_ModifyPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703220907256_ModifyTableName.resx">
+      <DependentUpon>201703220907256_ModifyTableName.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

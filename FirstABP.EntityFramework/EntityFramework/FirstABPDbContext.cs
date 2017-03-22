@@ -3,13 +3,17 @@ using Abp.Zero.EntityFramework;
 using FirstABP.Authorization.Roles;
 using FirstABP.MultiTenancy;
 using FirstABP.Users;
+using FirstABP.Entities;
+using System.Data.Entity;
 
 namespace FirstABP.EntityFramework
 {
     public class FirstABPDbContext : AbpZeroDbContext<Tenant, Role, User>
     {
         //TODO: Define an IDbSet for your Entities...
+        public virtual IDbSet<Person> Persons { set; get; }
 
+        public virtual IDbSet<Province> Provinces { set; get; }
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not
@@ -36,6 +40,11 @@ namespace FirstABP.EntityFramework
             : base(connection, true)
         {
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
