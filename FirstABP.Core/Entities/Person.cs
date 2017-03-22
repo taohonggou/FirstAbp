@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace FirstABP.Entities
@@ -18,6 +19,8 @@ namespace FirstABP.Entities
         /// 地址
         /// </summary>
         public string Address { get; set; }
+
+        public DateTime? CreateDate { get; set; }
 
         /// <summary>
         /// 这个人所属的省份

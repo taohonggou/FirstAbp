@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FirstABP.IRepositories;
 using Abp.AutoMapper;
+using FirstABP.Entities;
 
 namespace FirstABP.Persons.Dto
 {
@@ -17,9 +18,19 @@ namespace FirstABP.Persons.Dto
             _personRepository = personRepository;
         }
 
+        public void CreatePerson(CreatePersonInput input)
+        {
+            Person person = new Person
+            {
+                Name = input.Name
+            };
+
+            person = _personRepository.Insert(person);
+        }
+
         public GetCitiesOutput GetList(GetPersonsInput input)
         {
-            
+
             if (input.Name != null)
             {
                 var lsit = _personRepository.GetAllList(o => o.Name == input.Name);
