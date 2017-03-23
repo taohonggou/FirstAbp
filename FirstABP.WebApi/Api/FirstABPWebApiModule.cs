@@ -22,7 +22,7 @@ namespace FirstABP.Api
 
             Configuration.Modules.AbpWebApi().HttpConfiguration.Filters.Add(new HostAuthenticationFilter("Bearer"));
 
-            Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder.For<IPersonAppService>("tasksystem/task").Build();
+            Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder.For<IPersonAppService>("personsystem/person").Build();
             //DynamicApiControllerBuilder.For<IPersonAppService>("ChargeStationAPI/City").Build();
         }
     }

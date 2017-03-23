@@ -1,4 +1,5 @@
 ﻿using FirstABP.Persons.Dto;
+using System.Web.Http;
 
 namespace FirstABP.Persons
 {
@@ -6,6 +7,7 @@ namespace FirstABP.Persons
     {
         GetCitiesOutput GetList(GetPersonsInput input);
 
+        [HttpPost]
         void CreatePerson(CreatePersonInput input);
     }
 }

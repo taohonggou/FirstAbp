@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using FirstABP.IRepositories;
 using Abp.AutoMapper;
 using FirstABP.Entities;
+using FirstABP.Persons.Dto;
 
-namespace FirstABP.Persons.Dto
+namespace FirstABP.Persons
 {
     public class PersonAppService : FirstABPAppServiceBase, IPersonAppService
     {
@@ -18,6 +19,7 @@ namespace FirstABP.Persons.Dto
             _personRepository = personRepository;
         }
 
+
         public void CreatePerson(CreatePersonInput input)
         {
             Person person = new Person
@@ -27,6 +29,7 @@ namespace FirstABP.Persons.Dto
 
             person = _personRepository.Insert(person);
         }
+
 
         public GetCitiesOutput GetList(GetPersonsInput input)
         {
