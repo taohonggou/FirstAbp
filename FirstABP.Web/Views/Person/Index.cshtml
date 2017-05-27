@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<script src="/api/AbpServiceProxies/GetAll" type="text/javascript"></script>*@
+
+<script src="/api/AbpServiceProxies/Get?name=firstabp/person" type="text/javascript"></script>
+<script type="text/javascript">
+
+    abp.services.firstabp.person.getList({
+        name: 'abc'
+        //assignedPersonId: 3,
+        //description: 'a new task description...'
+    }, { //override jQuery's ajax parameters
+            async: false,
+            timeout: 30000
+        }).done(function (response) {
+            console.log(response);
+            abp.notify.success('successfully created a task!');
+        });
+</script>
+
+<h2>我是Person</h2>
+
+
+

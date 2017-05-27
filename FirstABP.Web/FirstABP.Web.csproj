@@ -1284,6 +1284,7 @@
     <Content Include="Views\Account\Login.css.map">
       <DependentUpon>Login.css</DependentUpon>
     </Content>
+    <Content Include="Views\Person\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1293,7 +1294,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Person\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FirstABP.Application\FirstABP.Application.csproj">

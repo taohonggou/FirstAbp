@@ -33,7 +33,6 @@ namespace FirstABP.Persons
 
         public GetCitiesOutput GetList(GetPersonsInput input)
         {
-
             if (input.Name != null)
             {
                 var lsit = _personRepository.GetAllList(o => o.Name == input.Name);
