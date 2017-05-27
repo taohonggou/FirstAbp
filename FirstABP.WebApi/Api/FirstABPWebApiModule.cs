@@ -5,14 +5,24 @@ using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.WebApi;
 using FirstABP.Persons;
-using Abp.WebApi.Controllers.Dynamic.Builders;
 using Abp.Web;
+using Abp.WebApi.OData;
+using Abp.WebApi.OData.Configuration;
+using FirstABP.Entities;
 
 namespace FirstABP.Api
 {
-    [DependsOn(typeof(AbpWebApiModule), typeof(FirstABPApplicationModule))]
+    [DependsOn(typeof(AbpWebApiModule), typeof(FirstABPApplicationModule), typeof(AbpWebApiODataModule))]
     public class FirstABPWebApiModule : AbpModule
     {
+        public override void PreInitialize()
+        {
+            var builder = Configuration.Modules.AbpWebApiOData().ODataModelBuilder;
+
+            //Configure your entities here...
+            builder.EntitySet<Person>("Persons");
+        }
+
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());

@@ -94,6 +94,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Car.cs" />
+    <Compile Include="Entities\CarBrand.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\Province.cs" />
     <Compile Include="FirstABPConsts.cs" />
